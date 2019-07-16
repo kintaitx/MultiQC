@@ -100,7 +100,7 @@ def parse_reports(self):
 
     # Calculate summed mean values for all read orientations
     for s_name, v in self.picard_insertSize_samplestats.items():
-        self.picard_insertSize_samplestats[s_name]['summed_mean'] = v['meansum'] / v['total_pairs']
+        self.picard_insertSize_samplestats[s_name]['summed_mean_catalog'] = v['meansum'] / v['total_pairs']
 
     # Calculate summed median values for all read orientations
     for s_name in self.picard_insertSize_histogram:
@@ -108,7 +108,7 @@ def parse_reports(self):
         for idx, c in self.picard_insertSize_histogram[s_name].items():
             j += c
             if j > (self.picard_insertSize_samplestats[s_name]['total_count'] / 2):
-                self.picard_insertSize_samplestats[s_name]['summed_median'] = idx
+                self.picard_insertSize_samplestats[s_name]['summed_median_catalog'] = idx
                 break
 
 
