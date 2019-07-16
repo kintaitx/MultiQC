@@ -25,7 +25,6 @@ class MultiqcModule(BaseMultiqcModule):
         # Find and load any Kallisto reports
         self.counts_data = dict()
         for f in self.find_log_files('metagenomic_read_stats', filehandles=True):
-            log.info
             self.parse_stats_log(f)
 
         # Filter to strip out ignored sample names
