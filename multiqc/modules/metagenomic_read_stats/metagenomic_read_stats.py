@@ -1,8 +1,3 @@
-from __future__ import absolute_import
-
-from .metagenomic_read_stats import MultiqcModule
-
-
 #!/usr/bin/env python
 
 """ MultiQC module to parse output from the human read removal stage of Kintai's metagenomics pipeline """
