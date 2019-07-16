@@ -100,7 +100,7 @@ def parse_reports(self):
 
     # Calculate summed mean values for all read orientations
     for s_name, v in self.picard_insertSize_samplestats.items():
-        self.picard_insertSize_samplestats[s_name]['summed_mean'] = v['meansum'] / v['total_pairs']
+        self.picard_insertSize_samplestats[s_name]['summed_mean_human'] = v['meansum'] / v['total_pairs']
 
     # Calculate summed median values for all read orientations
     for s_name in self.picard_insertSize_histogram:
@@ -108,7 +108,7 @@ def parse_reports(self):
         for idx, c in self.picard_insertSize_histogram[s_name].items():
             j += c
             if j > (self.picard_insertSize_samplestats[s_name]['total_count'] / 2):
-                self.picard_insertSize_samplestats[s_name]['summed_median'] = idx
+                self.picard_insertSize_samplestats[s_name]['summed_median_human'] = idx
                 break
 
 
@@ -127,7 +127,7 @@ def parse_reports(self):
                 missing_medians = True
 
         # Add to general stats table
-        self.general_stats_headers['summed_median'] = {
+        self.general_stats_headers['summed_median_human'] = {
             'title': 'Median Human Insert Size',
             'description': 'Median Insert Size, all read orientations (bp)',
             'min': 0,
@@ -135,7 +135,7 @@ def parse_reports(self):
             'format': '{:,.0f}',
             'scale': 'GnBu',
         }
-        self.general_stats_headers['summed_mean'] = {
+        self.general_stats_headers['summed_mean_human'] = {
             'title': 'Mean Human Insert Size',
             'description': 'Mean Insert Size, all read orientations (bp)',
             'min': 0,
