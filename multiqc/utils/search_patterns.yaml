@@ -385,8 +385,11 @@ picard/gcbias:
 picard/hsmetrics:
     contents: 'HsMetrics'
     shared: true
-picard/insertsize:
-    contents: 'InsertSizeMetrics'
+picard/insertsizeHuman:
+    fn: '*.human.insertsize.txt'
+    shared: true
+picard/insertsizeCatalog:
+    fn: '*.catalog.insertsize.txt'
     shared: true
 picard/markdups:
     contents: 'DuplicationMetrics'
