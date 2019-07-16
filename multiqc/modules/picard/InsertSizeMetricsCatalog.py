@@ -118,7 +118,7 @@ def parse_reports(self):
     if len(self.picard_insertSize_data) > 0:
 
         # Write parsed data to a file
-        self.write_data_file(self.picard_insertSize_data, 'multiqc_picard_insertSize')
+        self.write_data_file(self.picard_insertSize_data, 'multiqc_picard_insertSizeCatalog')
 
         # Do we have median insert sizes?
         missing_medians = False
@@ -128,7 +128,7 @@ def parse_reports(self):
 
         # Add to general stats table
         self.general_stats_headers['summed_median'] = {
-            'title': 'Insert Size',
+            'title': 'Median Catalog Insert Size',
             'description': 'Median Insert Size, all read orientations (bp)',
             'min': 0,
             'suffix': ' bp',
@@ -136,7 +136,7 @@ def parse_reports(self):
             'scale': 'GnBu',
         }
         self.general_stats_headers['summed_mean'] = {
-            'title': 'Mean Insert Size',
+            'title': 'Mean Catalog Insert Size',
             'description': 'Mean Insert Size, all read orientations (bp)',
             'min': 0,
             'suffix': ' bp',
@@ -171,9 +171,9 @@ def parse_reports(self):
                 'smooth_points': insertsize_smooth_points,
                 'smooth_points_sumcounts': [True, False],
                 'id': 'picard_insert_size',
-                'title': 'Picard: Insert Size',
+                'title': 'Picard: Catalog Insert Size',
                 'ylab': 'Count',
-                'xlab': 'Insert Size (bp)',
+                'xlab': 'Catalog Insert Size (bp)',
                 'xDecimals': False,
                 'tt_label': '<b>{point.x} bp</b>: {point.y:.0f}',
                 'ymin': 0,
@@ -183,7 +183,7 @@ def parse_reports(self):
                 ]
             }
             self.add_section (
-                name = 'Insert Size',
+                name = 'Catalog Insert Size',
                 anchor = 'picard-insertsize',
                 description = 'Plot shows the number of reads at a given insert size. Reads with different orientations are summed.',
                 plot = linegraph.plot([self.picard_insertSize_histogram, data_percent], pconfig)

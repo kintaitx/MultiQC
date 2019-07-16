@@ -118,7 +118,7 @@ def parse_reports(self):
     if len(self.picard_insertSize_data) > 0:
 
         # Write parsed data to a file
-        self.write_data_file(self.picard_insertSize_data, 'multiqc_picard_insertSize')
+        self.write_data_file(self.picard_insertSize_data, 'multiqc_picard_insertSizeHuman')
 
         # Do we have median insert sizes?
         missing_medians = False
@@ -128,7 +128,7 @@ def parse_reports(self):
 
         # Add to general stats table
         self.general_stats_headers['summed_median'] = {
-            'title': 'Insert Size',
+            'title': 'Median Human Insert Size',
             'description': 'Median Insert Size, all read orientations (bp)',
             'min': 0,
             'suffix': ' bp',
@@ -136,7 +136,7 @@ def parse_reports(self):
             'scale': 'GnBu',
         }
         self.general_stats_headers['summed_mean'] = {
-            'title': 'Mean Insert Size',
+            'title': 'Mean Human Insert Size',
             'description': 'Mean Insert Size, all read orientations (bp)',
             'min': 0,
             'suffix': ' bp',
