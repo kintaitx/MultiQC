@@ -14,7 +14,8 @@ from . import AlignmentSummaryMetrics
 from . import BaseDistributionByCycleMetrics
 from . import GcBiasMetrics
 from . import HsMetrics
-from . import InsertSizeMetrics
+from . import InsertSizeMetricsHuman
+from . import InsertSizeMetricsCatalog
 from . import MarkDuplicates
 from . import OxoGMetrics
 from . import RnaSeqMetrics
@@ -64,9 +65,13 @@ class MultiqcModule(BaseMultiqcModule):
         if n['HsMetrics'] > 0:
             log.info("Found {} HsMetrics reports".format(n['HsMetrics']))
 
-        n['InsertSizeMetrics'] = InsertSizeMetrics.parse_reports(self)
-        if n['InsertSizeMetrics'] > 0:
-            log.info("Found {} InsertSizeMetrics reports".format(n['InsertSizeMetrics']))
+        n['InsertSizeMetricsHuman'] = InsertSizeMetricsHuman.parse_reports(self)
+        if n['InsertSizeMetricsHuman'] > 0:
+            log.info("Found {} InsertSizeMetrics reports".format(n['InsertSizeMetricsHuman']))
+
+        n['InsertSizeMetricsCatalog'] = InsertSizeMetricsCatalog.parse_reports(self)
+        if n['InsertSizeMetricsCatalog'] > 0:
+            log.info("Found {} InsertSizeMetrics reports".format(n['InsertSizeMetricsCatalog']))
 
         n['MarkDuplicates'] = MarkDuplicates.parse_reports(self)
         if n['MarkDuplicates'] > 0:

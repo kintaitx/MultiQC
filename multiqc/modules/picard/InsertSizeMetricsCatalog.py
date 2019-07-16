@@ -23,7 +23,7 @@ def parse_reports(self):
     self.picard_insertSize_samplestats = dict()
 
     # Go through logs and find Metrics
-    for f in self.find_log_files('picard/insertsize', filehandles=True):
+    for f in self.find_log_files('picard/insertsizeCatalog', filehandles=True):
         s_name = None
         in_hist = False
         for l in f['f']:
