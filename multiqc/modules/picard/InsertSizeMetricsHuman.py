@@ -170,10 +170,10 @@ def parse_reports(self):
             pconfig = {
                 'smooth_points': insertsize_smooth_points,
                 'smooth_points_sumcounts': [True, False],
-                'id': 'picard_insert_size',
-                'title': 'Picard: Insert Size',
+                'id': 'picard_insert_size_human',
+                'title': 'Picard: Insert Size Human',
                 'ylab': 'Count',
-                'xlab': 'Insert Size (bp)',
+                'xlab': 'Human Insert Size (bp)',
                 'xDecimals': False,
                 'tt_label': '<b>{point.x} bp</b>: {point.y:.0f}',
                 'ymin': 0,
@@ -183,8 +183,8 @@ def parse_reports(self):
                 ]
             }
             self.add_section (
-                name = 'Insert Size',
-                anchor = 'picard-insertsize',
+                name = 'Insert Size Human',
+                anchor = 'picard-insertsizeHuman',
                 description = 'Plot shows the number of reads at a given insert size. Reads with different orientations are summed.',
                 plot = linegraph.plot([self.picard_insertSize_histogram, data_percent], pconfig)
             )
