@@ -117,7 +117,7 @@ setup(
             'longranger = multiqc.modules.longranger:MultiqcModule',
             'macs2 = multiqc.modules.macs2:MultiqcModule',
             'methylQA = multiqc.modules.methylQA:MultiqcModule',
-            'metagenomics_read_stats = multiqc.modules.metagenomics_read_stats:MultiqcModule'
+            'metagenomics_read_stats = multiqc.modules.metagenomics_read_stats:MultiqcModule',
             'mirtrace = multiqc.modules.mirtrace:MultiqcModule',
             'minionqc = multiqc.modules.minionqc:MultiqcModule',
             'mosdepth = multiqc.modules.mosdepth:MultiqcModule',
