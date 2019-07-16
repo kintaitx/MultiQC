@@ -444,6 +444,9 @@ module_order:
     - bowtie1:
         module_tag:
             - RNA
+    - metagenomics_read_stats:
+          - module_tag:
+                - DNA
 
     # Pre-alignment QC
     - kat:
