@@ -185,6 +185,8 @@ fn_clean_exts:
     - '.rpkm'
     - '.selfSM'
     - '.extendedFrags'
+    - '.human.insertsize.txt'
+    - '.catalog.insertsize.txt'
 
 # These are removed after the above, only if sample names
 # start or end with this string. Again, removed in order.
