@@ -92,6 +92,7 @@ class MultiqcModule(BaseMultiqcModule):
         """ Make the HighCharts HTML to plot the alignment rates """
 
         # Specify the order of the different possible categories
+        keys = OrderedDict()
         keys['human_reads'] = {'color': '#437bb1', 'name': 'Human Reads'}
         keys['non_human_reads'] = {'color': '#7cb5ec', 'name': 'Mapped to multiple loci'}
 
