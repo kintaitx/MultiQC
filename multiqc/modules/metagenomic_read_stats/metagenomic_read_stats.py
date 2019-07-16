@@ -33,6 +33,7 @@ class MultiqcModule(BaseMultiqcModule):
         # Find and load any Kallisto reports
         self.counts_data = dict()
         for f in self.find_log_files('metagenomic_read_stats', filehandles=True):
+            log.info
             self.parse_stats_log(f)
 
         # Filter to strip out ignored sample names
@@ -50,7 +51,7 @@ class MultiqcModule(BaseMultiqcModule):
         self.metagenomic_read_stats_general_stats_table()
 
         # Alignment Rate Plot
-        #self.add_section( plot = self.kallisto_alignment_plot() )
+        self.add_section( plot = self.counts_bar_plot() )
 
 
     def parse_stats_log(self, f):
@@ -96,7 +97,7 @@ class MultiqcModule(BaseMultiqcModule):
 
 
 
-    def kallisto_alignment_plot (self):
+    def counts_bar_plot(self):
         """ Make the HighCharts HTML to plot the alignment rates """
 
         # Specify the order of the different possible categories
