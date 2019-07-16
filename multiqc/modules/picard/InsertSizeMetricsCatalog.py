@@ -127,7 +127,7 @@ def parse_reports(self):
                 missing_medians = True
 
         # Add to general stats table
-        self.general_stats_headers['summed_median'] = {
+        self.general_stats_headers['summed_median_catalog'] = {
             'title': 'Median Catalog Insert Size',
             'description': 'Median Insert Size, all read orientations (bp)',
             'min': 0,
@@ -135,7 +135,7 @@ def parse_reports(self):
             'format': '{:,.0f}',
             'scale': 'GnBu',
         }
-        self.general_stats_headers['summed_mean'] = {
+        self.general_stats_headers['summed_mean_catalog'] = {
             'title': 'Mean Catalog Insert Size',
             'description': 'Mean Insert Size, all read orientations (bp)',
             'min': 0,
