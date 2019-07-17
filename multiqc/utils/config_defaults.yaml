@@ -132,6 +132,7 @@ fn_clean_exts:
     - '.png'
     - '.jpg'
     - '.jpeg'
+    - '.human_removal_stats'
     - 'Log.final'
     - 'ReadsPerGene'
     - '.flagstat'
