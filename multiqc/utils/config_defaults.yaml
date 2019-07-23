@@ -216,6 +216,8 @@ fn_clean_trim:
     - '_matrix'
     - '.stats'
     - '.hist'
+    - '_1'
+    - '_2'
 
 # Files to ignore when indexing files.
 # Grep file match patterns.
